@@ -1,5 +1,5 @@
 rem [SGLEE:20230328TUE_225800] Created
 
-code .
+call code .
 
 pause
