@@ -1,0 +1,301 @@
+/*
+[SGLEE:20211102TUE_054700] Created
+[SGLEE:20211107SUN_050600]
+  <style>
+    @import "./BlueMuiColors.css";
+    body {
+      background-color: var(--mui-blue-50);
+    }
+  </style>
+[SGLEE:20220128FRI_081800] Updated
+*/
+
+:root {
+  /* blue */
+  --mui-blue-50: #e3f2fd;
+  --mui-blue-100: #bbdefb;
+  --mui-blue-200: #90caf9;
+  --mui-blue-300: #64b5f6;
+  --mui-blue-400: #42a5f5;
+  --mui-blue-500: #2196f3;
+  --mui-blue-600: #1e88e5;
+  --mui-blue-700: #1976d2;
+  --mui-blue-800: #1565c0;
+  --mui-blue-900: #0d47a1;
+  --mui-blue-A100: #82b1ff;
+  --mui-blue-A200: #448aff;
+  --mui-blue-A400: #2979ff;
+  --mui-blue-A700: #2962ff;
+
+  /* pink */
+  --mui-pink-50: #fce4ec;
+  --mui-pink-100: #f8bbd0;
+  --mui-pink-200: #f48fb1;
+  --mui-pink-300: #f06292;
+  --mui-pink-400: #ec407a;
+  --mui-pink-500: #e91e63;
+  --mui-pink-600: #d81b60;
+  --mui-pink-700: #c2185b;
+  --mui-pink-800: #ad1457;
+  --mui-pink-900: #880e4f;
+  --mui-pink-A100: #ff80ab;
+  --mui-pink-A200: #ff4081;
+  --mui-pink-A400: #f50057;
+  --mui-pink-A700: #c51162;
+
+  /* purple */
+  --mui-purple-50: #f3e5f5;
+  --mui-purple-100: #e1bee7;
+  --mui-purple-200: #ce93d8;
+  --mui-purple-300: #ba68c8;
+  --mui-purple-400: #ab47bc;
+  --mui-purple-500: #9c27b0;
+  --mui-purple-600: #8e24aa;
+  --mui-purple-700: #7b1fa2;
+  --mui-purple-800: #6a1b9a;
+  --mui-purple-900: #4a148c;
+  --mui-purple-A100: #ea80fc;
+  --mui-purple-A200: #e040fb;
+  --mui-purple-A400: #d500f9;
+  --mui-purple-A700: #aa00ff;
+
+  /* deepPurple */
+  --mui-deepPurple-50: #ede7f6;
+  --mui-deepPurple-100: #d1c4e9;
+  --mui-deepPurple-200: #b39ddb;
+  --mui-deepPurple-300: #9575cd;
+  --mui-deepPurple-400: #7e57c2;
+  --mui-deepPurple-500: #673ab7;
+  --mui-deepPurple-600: #5e35b1;
+  --mui-deepPurple-700: #512da8;
+  --mui-deepPurple-800: #4527a0;
+  --mui-deepPurple-900: #311b92;
+  --mui-deepPurple-A100: #b388ff;
+  --mui-deepPurple-A200: #7c4dff;
+  --mui-deepPurple-A400: #651fff;
+  --mui-deepPurple-A700: #6200ea;
+
+  /* indigo */
+  --mui-indigo-50: #e8eaf6;
+  --mui-indigo-100: #c5cae9;
+  --mui-indigo-200: #9fa8da;
+  --mui-indigo-300: #7986cb;
+  --mui-indigo-400: #5c6bc0;
+  --mui-indigo-500: #3f51b5;
+  --mui-indigo-600: #3949ab;
+  --mui-indigo-700: #303f9f;
+  --mui-indigo-800: #283593;
+  --mui-indigo-900: #1a237e;
+  --mui-indigo-A100: #8c9eff;
+  --mui-indigo-A200: #536dfe;
+  --mui-indigo-A400: #3d5afe;
+  --mui-indigo-A700: #304ffe;
+
+  /* lightBlue */
+  --mui-lightBlue-50: #e1f5fe;
+  --mui-lightBlue-100: #b3e5fc;
+  --mui-lightBlue-200: #81d4fa;
+  --mui-lightBlue-300: #4fc3f7;
+  --mui-lightBlue-400: #29b6f6;
+  --mui-lightBlue-500: #03a9f4;
+  --mui-lightBlue-600: #039be5;
+  --mui-lightBlue-700: #0288d1;
+  --mui-lightBlue-800: #0277bd;
+  --mui-lightBlue-900: #01579b;
+  --mui-lightBlue-A100: #80d8ff;
+  --mui-lightBlue-A200: #40c4ff;
+  --mui-lightBlue-A400: #00b0ff;
+  --mui-lightBlue-A700: #0091ea;
+
+  /* cyan */
+  --mui-cyan-50: #e0f7fa;
+  --mui-cyan-100: #b2ebf2;
+  --mui-cyan-200: #80deea;
+  --mui-cyan-300: #4dd0e1;
+  --mui-cyan-400: #26c6da;
+  --mui-cyan-500: #00bcd4;
+  --mui-cyan-600: #00acc1;
+  --mui-cyan-700: #0097a7;
+  --mui-cyan-800: #00838f;
+  --mui-cyan-900: #006064;
+  --mui-cyan-A100: #84ffff;
+  --mui-cyan-A200: #18ffff;
+  --mui-cyan-A400: #00e5ff;
+  --mui-cyan-A700: #00b8d4;
+
+  /* teal */
+  --mui-teal-50: #e0f2f1;
+  --mui-teal-100: #b2dfdb;
+  --mui-teal-200: #80cbc4;
+  --mui-teal-300: #4db6ac;
+  --mui-teal-400: #26a69a;
+  --mui-teal-500: #009688;
+  --mui-teal-600: #00897b;
+  --mui-teal-700: #00796b;
+  --mui-teal-800: #00695c;
+  --mui-teal-900: #004d40;
+  --mui-teal-A100: #a7ffeb;
+  --mui-teal-A200: #64ffda;
+  --mui-teal-A400: #1de9b6;
+  --mui-teal-A700: #00bfa5;
+
+  /* green */
+  --mui-green-50: #e8f5e9;
+  --mui-green-100: #c8e6c9;
+  --mui-green-200: #a5d6a7;
+  --mui-green-300: #81c784;
+  --mui-green-400: #66bb6a;
+  --mui-green-500: #4caf50;
+  --mui-green-600: #43a047;
+  --mui-green-700: #388e3c;
+  --mui-green-800: #2e7d32;
+  --mui-green-900: #1b5e20;
+  --mui-green-A100: #b9f6ca;
+  --mui-green-A200: #69f0ae;
+  --mui-green-A400: #00e676;
+  --mui-green-A700: #00c853;
+
+  /* lightGreen */
+  --mui-lightGreen-50: #f1f8e9;
+  --mui-lightGreen-100: #dcedc8;
+  --mui-lightGreen-200: #c5e1a5;
+  --mui-lightGreen-300: #aed581;
+  --mui-lightGreen-400: #9ccc65;
+  --mui-lightGreen-500: #8bc34a;
+  --mui-lightGreen-600: #7cb342;
+  --mui-lightGreen-700: #689f38;
+  --mui-lightGreen-800: #558b2f;
+  --mui-lightGreen-900: #33691e;
+  --mui-lightGreen-A100: #ccff90;
+  --mui-lightGreen-A200: #b2ff59;
+  --mui-lightGreen-A400: #76ff03;
+  --mui-lightGreen-A700: #64dd17;
+
+  /* lime */
+  --mui-lime-50: #f9fbe7;
+  --mui-lime-100: #f0f4c3;
+  --mui-lime-200: #e6ee9c;
+  --mui-lime-300: #dce775;
+  --mui-lime-400: #d4e157;
+  --mui-lime-500: #cddc39;
+  --mui-lime-600: #c0ca33;
+  --mui-lime-700: #afb42b;
+  --mui-lime-800: #9e9d24;
+  --mui-lime-900: #827717;
+  --mui-lime-A100: #f4ff81;
+  --mui-lime-A200: #eeff41;
+  --mui-lime-A400: #c6ff00;
+  --mui-lime-A700: #aeea00;
+
+  /* yellow */
+  --mui-yellow-50: #fffde7;
+  --mui-yellow-100: #fff9c4;
+  --mui-yellow-200: #fff59d;
+  --mui-yellow-300: #fff176;
+  --mui-yellow-400: #ffee58;
+  --mui-yellow-500: #ffeb3b;
+  --mui-yellow-600: #fdd835;
+  --mui-yellow-700: #fbc02d;
+  --mui-yellow-800: #f9a825;
+  --mui-yellow-900: #f57f17;
+  --mui-yellow-A100: #ffff8d;
+  --mui-yellow-A200: #ffff00;
+  --mui-yellow-A400: #ffea00;
+  --mui-yellow-A700: #ffd600;
+
+  /* amber */
+  --mui-amber-50: #fff8e1;
+  --mui-amber-100: #ffecb3;
+  --mui-amber-200: #ffe082;
+  --mui-amber-300: #ffd54f;
+  --mui-amber-400: #ffca28;
+  --mui-amber-500: #ffc107;
+  --mui-amber-600: #ffb300;
+  --mui-amber-700: #ffa000;
+  --mui-amber-800: #ff8f00;
+  --mui-amber-900: #ff6f00;
+  --mui-amber-A100: #ffe57f;
+  --mui-amber-A200: #ffd740;
+  --mui-amber-A400: #ffc400;
+  --mui-amber-A700: #ffab00;
+
+  /* orange */
+  --mui-orange-50: #fff3e0;
+  --mui-orange-100: #ffe0b2;
+  --mui-orange-200: #ffcc80;
+  --mui-orange-300: #ffb74d;
+  --mui-orange-400: #ffa726;
+  --mui-orange-500: #ff9800;
+  --mui-orange-600: #fb8c00;
+  --mui-orange-700: #f57c00;
+  --mui-orange-800: #ef6c00;
+  --mui-orange-900: #e65100;
+  --mui-orange-A100: #ffd180;
+  --mui-orange-A200: #ffab40;
+  --mui-orange-A400: #ff9100;
+  --mui-orange-A700: #ff6d00;
+
+  /* deepOrange */
+  --mui-deepOrange-50: #fbe9e7;
+  --mui-deepOrange-100: #ffccbc;
+  --mui-deepOrange-200: #ffab91;
+  --mui-deepOrange-300: #ff8a65;
+  --mui-deepOrange-400: #ff7043;
+  --mui-deepOrange-500: #ff5722;
+  --mui-deepOrange-600: #f4511e;
+  --mui-deepOrange-700: #e64a19;
+  --mui-deepOrange-800: #d84315;
+  --mui-deepOrange-900: #bf360c;
+  --mui-deepOrange-A100: #ff9e80;
+  --mui-deepOrange-A200: #ff6e40;
+  --mui-deepOrange-A400: #ff3d00;
+  --mui-deepOrange-A700: #dd2c00;
+
+  /* brown */
+  --mui-brown-50: #efebe9;
+  --mui-brown-100: #d7ccc8;
+  --mui-brown-200: #bcaaa4;
+  --mui-brown-300: #a1887f;
+  --mui-brown-400: #8d6e63;
+  --mui-brown-500: #795548;
+  --mui-brown-600: #6d4c41;
+  --mui-brown-700: #5d4037;
+  --mui-brown-800: #4e342e;
+  --mui-brown-900: #3e2723;
+  --mui-brown-A100: #d7ccc8;
+  --mui-brown-A200: #bcaaa4;
+  --mui-brown-A400: #8d6e63;
+  --mui-brown-A700: #5d4037;
+
+  /* grey */
+  --mui-grey-50: #fafafa;
+  --mui-grey-100: #f5f5f5;
+  --mui-grey-200: #eeeeee;
+  --mui-grey-300: #e0e0e0;
+  --mui-grey-400: #bdbdbd;
+  --mui-grey-500: #9e9e9e;
+  --mui-grey-600: #757575;
+  --mui-grey-700: #616161;
+  --mui-grey-800: #424242;
+  --mui-grey-900: #212121;
+  --mui-grey-A100: #f5f5f5;
+  --mui-grey-A200: #eeeeee;
+  --mui-grey-A400: #bdbdbd;
+  --mui-grey-A700: #616161;
+
+  /* blueGrey */
+  --mui-blueGrey-50: #eceff1;
+  --mui-blueGrey-100: #cfd8dc;
+  --mui-blueGrey-200: #b0bec5;
+  --mui-blueGrey-300: #90a4ae;
+  --mui-blueGrey-400: #78909c;
+  --mui-blueGrey-500: #607d8b;
+  --mui-blueGrey-600: #546e7a;
+  --mui-blueGrey-700: #455a64;
+  --mui-blueGrey-800: #37474f;
+  --mui-blueGrey-900: #263238;
+  --mui-blueGrey-A100: #cfd8dc;
+  --mui-blueGrey-A200: #b0bec5;
+  --mui-blueGrey-A400: #78909c;
+  --mui-blueGrey-A700: #455a64;
+}
