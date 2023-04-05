@@ -83,7 +83,7 @@
 ```text
 WebPack:   npm i -D webpack webpack-cli webpack-dev-server
 Plug-ins:  npm i -D html-webpack-plugin clean-webpack-plugin
-Loadeds:   npm i -D ts-loader style-loader css-loader file-loader
+Loaders:   npm i -D ts-loader style-loader css-loader sass sass-loader file-loader
 Etc:       npm i -g serve
 ```
 
@@ -134,6 +134,10 @@ Etc:       npm i -g serve
             use: ["style-loader", "css-loader"],
             exclude: /node_modules/,
           },
+          {
+            test: /\.s[ac]ss$/i,
+            use: ["style-loader", "css-loader", "sass-loader"],
+          },          
           {
             test: /\.(png|jpg)$/,
             use: ["file-loader"],
@@ -206,8 +210,8 @@ Web App (Chrom)
     
     import tube1014 from "./images/1014.png";
     import tube1015 from "./images/1015.png";
-    import "./style.css";
-    import { _$, _$$, _add } from "./utils";
+    import "./style.scss";
+    import { _$, _$$ } from "./utils";
     
     const main = (): void => {
       console.clear();
@@ -218,6 +222,11 @@ Web App (Chrom)
         img.src = img.src === tube1014 ? tube1015 : tube1014;
       }) as HTMLImageElement;
       img.src = tube1014;
+      const btn = _$$("button", root, "버튼", (e: MouseEvent) => {
+        const t = e.target as HTMLButtonElement;
+        t.disabled = true;
+        setTimeout(() => (t.disabled = false), 1000);
+      });
     };
     
     window.onload = () => main();

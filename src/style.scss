@@ -1,0 +1,14 @@
+@import "./mui_colors.css";
+
+body {
+  background-color: var(--mui-blue-50);
+  color: var(--mui-blue-A700);
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}

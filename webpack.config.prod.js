@@ -20,6 +20,10 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
+        test: /\.s[ac]ss$/i,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
+      {
         test: /\.(png|jpg)$/,
         use: ["file-loader"],
         exclude: /node_modules/,
