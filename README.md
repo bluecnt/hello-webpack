@@ -105,7 +105,7 @@ Etc:       npm i -g serve
         static: {
           directory: path.resolve(__dirname, "dist"),
         },
-        port: 8080,
+        port: 7000,
       },
     };
     ```
@@ -175,7 +175,7 @@ Web App (Chrom)
           "type": "chrome",
           "request": "launch",
           "name": "Launch Chrome against localhost",
-          "url": "http://localhost:8080",
+          "url": "http://localhost:7000",
           "webRoot": "${workspaceFolder}"
         }
       ]
@@ -192,7 +192,7 @@ Web App (Chrom)
 
 # 빌드
 > npm run build
-> serve dist -l 8080
+> serve dist -l 7000
 ```
 
 </br>
@@ -237,15 +237,15 @@ Web App (Chrom)
     pause
     ```
 
-- 💾 _1_start_front-end_p8080.cmd
+- 💾 _1_start_front-end_p7000.cmd
 
     ```text
     rem [SGLEE:20230405WED_110700] Created
     rem npm i serve
     
     call npm run build
-    call explorer "http://bluecnt.iptime.org:8080"
-    call serve dist -l 8080
+    call explorer "http://bluecnt.iptime.org:7000"
+    call serve dist -l 7000
     
     pause
     ```
