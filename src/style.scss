@@ -1,14 +1,8 @@
 @import "./mui_colors.css";
+// Import all of Bootstrap's CSS
+@import "bootstrap/scss/bootstrap";
 
 body {
-  background-color: var(--mui-blue-50);
-  color: var(--mui-blue-A700);
-}
-
-button {
-  cursor: pointer;
-}
-
-button:disabled {
-  cursor: not-allowed;
+  background-color: $blue-100;
+  color: blue-900;
 }

@@ -14,11 +14,12 @@ const main = (): void => {
     img.src = img.src === tube1014 ? tube1015 : tube1014;
   }) as HTMLImageElement;
   img.src = tube1014;
-  const btn = _$$("button", root, "버튼", (e: MouseEvent) => {
+  const btn = _$$("Button", root, "버튼", (e: MouseEvent) => {
     const t = e.target as HTMLButtonElement;
     t.disabled = true;
     setTimeout(() => (t.disabled = false), 1000);
   });
+  btn.className = "btn btn-primary btn-sm";
 };
 
 window.onload = () => main();
