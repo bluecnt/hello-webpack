@@ -2,6 +2,27 @@
 
 </br>
 
+## ⭐ 프로젝트 다운로드 및 세팅
+
+```bash
+# 프로젝트 다운로드 
+> npx degit https://github.com/bluecnt/hello-webpack new-name
+
+# 프로젝트 이름 업데이트
+package.json { ..., name: "new-name", ... }
+
+# 포트 번호 업데이트
+./vscode/launch.json
+_1_start_front-end_pXXXX.cmd
+
+# git 초기화 및 최초 커밋
+> git init
+> git add -A
+> git commit -m "Initial commit"
+```
+
+</br>
+
 ## 1. 프로젝트 설정 파일 생성
 
 ```text
@@ -22,7 +43,7 @@
     }
     ```
 
-</br>
+    </br>
 
 ## 2. 타입스크립트 설정 파일 생성
 
@@ -64,16 +85,18 @@
         /* Completeness */
         ...
       },
+      "include": ["src"],
       "exclude": ["node_modules"]
     }
     ```
 
-- 💾 index.d.ts
+- 💾 src/global.d.ts
 
     ```tsx
-    // *.jpg, *.png를 모듈로 정의(import 가능!)
+    // import가 가능하도록 *.jpg, *.png를 모듈로 정의
     declare module "*.jpg";
     declare module "*.png";
+    declare module "*.scss";
     ```
 
 </br>
@@ -83,8 +106,10 @@
 ```text
 WebPack:   npm i -D webpack webpack-cli webpack-dev-server
 Plug-ins:  npm i -D html-webpack-plugin clean-webpack-plugin
-Loaders:   npm i -D ts-loader style-loader css-loader sass sass-loader file-loader
-Etc:       npm i -g serve
+Loadeds:   npm i -D ts-loader style-loader css-loader sass sass-loader file-loader
+Etc:       npm i -D sass bootstrap@5.3.0-alpha3
+
+Global:    npm i -g typescript serve
 ```
 
 - 💾 webpack.config.dev.js <개발용>
@@ -105,7 +130,7 @@ Etc:       npm i -g serve
         static: {
           directory: path.resolve(__dirname, "dist"),
         },
-        port: 7000,
+        port: 8080,
       },
     };
     ```
@@ -135,9 +160,9 @@ Etc:       npm i -g serve
             exclude: /node_modules/,
           },
           {
-            test: /\.s[ac]ss$/i,
+            test: /\.s[ac]ss$/,
             use: ["style-loader", "css-loader", "sass-loader"],
-          },          
+          },
           {
             test: /\.(png|jpg)$/,
             use: ["file-loader"],
@@ -196,12 +221,12 @@ Web App (Chrom)
 
 # 빌드
 > npm run build
-> serve dist -l 7000
+> serve dist -l 8080
 ```
 
 </br>
 
-## 6. 소스 파일 적용
+## 6. 테스트
 
 - 💾 main.ts
 
@@ -210,23 +235,29 @@ Web App (Chrom)
     
     import tube1014 from "./images/1014.png";
     import tube1015 from "./images/1015.png";
-    import "./style.scss";
+    import vars from "./style.scss";
     import { _$, _$$ } from "./utils";
     
     const main = (): void => {
       console.clear();
+      console.log("hello-webpack");
+      // [SGLEE:20230410MON_163300] undefined가 출력됨. 참고로, react에서는 잘 됨.
+      console.log(vars);
     
       const root = _$("#root") as HTMLDivElement;
-      const text = _$$("div", root, "click to change!") as HTMLDivElement;
+      root.className = "vh-100 p-4 bg-light text-body";
+    
+      const text = _$$("div", root, "click image to change!") as HTMLDivElement;
       const img = _$$("img", root, undefined, (e: MouseEvent) => {
         img.src = img.src === tube1014 ? tube1015 : tube1014;
       }) as HTMLImageElement;
       img.src = tube1014;
-      const btn = _$$("button", root, "버튼", (e: MouseEvent) => {
+      const btn = _$$("Button", root, "버튼", (e: MouseEvent) => {
         const t = e.target as HTMLButtonElement;
         t.disabled = true;
         setTimeout(() => (t.disabled = false), 1000);
       });
+      btn.className = "btn btn-primary btn-sm";
     };
     
     window.onload = () => main();
@@ -250,11 +281,19 @@ Web App (Chrom)
 
     ```text
     rem [SGLEE:20230405WED_110700] Created
+    rem [SGLEE:20230410MON_164400] Added Host, Port
     rem npm i serve
     
+    setlocal
+    
+    set Host="http://bluecnt.iptime.org"
+    set Port=7000
+    
     call npm run build
-    call explorer "http://bluecnt.iptime.org:7000"
-    call serve dist -l 7000
+    call explorer %Host%:%Port%
+    call serve dist -l %Port%
+    
+    endlocal
     
     pause
     ```
@@ -264,10 +303,12 @@ Web App (Chrom)
     ```text
     rem [SGLEE:20230405WED_111100] Created
     
-    call npm i -D webpack webpack-cli webpack-dev-server
-    call npm i -D html-webpack-plugin clean-webpack-plugin
-    call npm i -D ts-loader style-loader css-loader file-loader
-    call npm i -g serve
+    rem call npm i -D webpack webpack-cli webpack-dev-server
+    rem call npm i -D html-webpack-plugin clean-webpack-plugin
+    rem call npm i -D ts-loader style-loader css-loader sass-loader file-loader
+    rem call npm i -D sass bootstrap@5.3.0-alpha3
+    
+    call npm i -g typescript serve
     
     pause
     ```

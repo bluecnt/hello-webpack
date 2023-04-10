@@ -1,8 +1,11 @@
-@import "./mui_colors.css";
 // Import all of Bootstrap's CSS
 @import "bootstrap/scss/bootstrap";
 
-body {
-  background-color: $blue-100;
-  color: blue-900;
+// body {
+//   background-color: $blue-100;
+//   color: $blue-900;
+// }
+
+:export {
+  blue100: $blue-100;
 }
