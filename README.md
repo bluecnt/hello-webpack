@@ -12,8 +12,10 @@
 package.json { ..., name: "new-name", ... }
 
 # 포트 번호 업데이트
+# (back-end: xxx0, front-end: xxx1)
 ./vscode/launch.json
-_1_start_front-end_pXXXX.cmd
+_1_start_front-end_p7000.cmd
+webpack.config.dev.js
 
 # git 초기화 및 최초 커밋
 > git init
