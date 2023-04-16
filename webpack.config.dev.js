@@ -42,9 +42,9 @@ module.exports = {
     }),
   ],
   devServer: {
-    static: {
-      directory: path.resolve(__dirname, "dist"),
-    },
+    static: path.resolve(__dirname, "dist"),
+    // host: "192.168.0.2",
     port: 7000,
+    hot: true,
   },
 };

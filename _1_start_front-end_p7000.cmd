@@ -4,7 +4,7 @@ rem npm i serve
 
 setlocal
 
-set Host="http://bluecnt.iptime.org"
+set Host=http://bluecnt.iptime.org
 set Port=7000
 
 call npm run build
