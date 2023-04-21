@@ -2,13 +2,8 @@
 
 import tube1014 from "./images/1014.png";
 import tube1015 from "./images/1015.png";
-import { BsBtn } from "./libs-ts/src/bs-components/BsButton";
-import {
-  _$,
-  _$$,
-  _dataset1,
-  _dataset1Num,
-} from "./libs-ts/src/html-ctrls/HtmlUtils";
+import { newBsBtn } from "./libs-ts/src/bs-components/BsButton";
+import { _$, _$$, _dataset1Num } from "./libs-ts/src/html-ctrls/HtmlUtils";
 import vars from "./style.scss";
 
 const main = (): void => {
@@ -17,8 +12,10 @@ const main = (): void => {
   // [SGLEE:20230410MON_163300] undefined가 출력됨. 참고로, react에서는 잘 됨.
   console.log(vars);
 
-  const root = _$("#root") as HTMLDivElement;
-  root.className = "vh-100 p-4 bg-light text-body";
+  const root = _$({
+    selectors: "#root",
+    className: "vh-100 p-4 bg-light text-body",
+  }) as HTMLDivElement;
 
   const text = _$$({
     tagName: "div",
@@ -46,7 +43,7 @@ const main = (): void => {
   //   t.disabled = true;
   //   setTimeout(() => (t.disabled = false), 1000);
   // };
-  const btn = BsBtn({
+  const btn = newBsBtn({
     parent: root,
     text: "버튼0",
     dataset: { sn: 1234 },
